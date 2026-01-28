@@ -97,12 +97,12 @@
 
         .title-section {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
         }
 
         .title-section h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.8em;
+            font-size: 2.5em;
             font-weight: 700;
             margin-bottom: 10px;
             letter-spacing: -1px;
@@ -110,11 +110,36 @@
             color: #ffffff;
         }
 
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
+
         .title-section p {
             font-size: 0.95em;
             font-weight: 300;
             color: #c0c0e8;
             letter-spacing: 1px;
+        }
+
+        .base-info {
+            background: rgba(100, 150, 255, 0.1);
+            border-left: 3px solid rgba(100, 150, 255, 0.5);
+            padding: 12px 16px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            font-size: 0.9em;
+            color: #d0d0e8;
+        }
+
+        .note {
+            background: rgba(255, 100, 150, 0.1);
+            border-left: 3px solid rgba(255, 100, 150, 0.5);
+            padding: 12px 16px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            color: #d0d0e8;
         }
 
         .cover-slide {
@@ -165,18 +190,17 @@
         }
 
         th {
-            padding: 16px 18px;
+            padding: 14px 16px;
             text-align: left;
             font-family: 'Playfair Display', serif;
-            font-size: 1em;
+            font-size: 0.95em;
             font-weight: 600;
             color: #ffffff;
             letter-spacing: 0.5px;
         }
 
         th:nth-child(2),
-        th:nth-child(3),
-        th:nth-child(4) {
+        th:nth-child(3) {
             text-align: center;
         }
 
@@ -193,45 +217,21 @@
             border-bottom: none;
         }
 
-        tbody tr:last-child td {
-            font-weight: 600;
-            background: rgba(100, 150, 255, 0.1);
-            color: #e8e8ff;
-        }
-
         td {
-            padding: 14px 18px;
+            padding: 12px 16px;
             font-family: 'Lato', sans-serif;
-            font-size: 0.9em;
+            font-size: 0.85em;
             color: #d0d0e8;
         }
 
         td:nth-child(2),
-        td:nth-child(3),
-        td:nth-child(4) {
+        td:nth-child(3) {
             text-align: center;
         }
 
         td:first-child {
             font-weight: 500;
             color: #f0f0ff;
-        }
-
-        .total-row td {
-            padding: 14px 18px;
-            font-weight: 600;
-            border-top: 2px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .total-row td:first-child {
-            font-size: 1em;
-            color: #ffffff;
-        }
-
-        .total-row td:last-child {
-            font-size: 1.1em;
-            color: #fff;
-            background: rgba(255, 100, 150, 0.15);
         }
 
         .controls {
@@ -285,7 +285,7 @@
             }
 
             .title-section h1 {
-                font-size: 2em;
+                font-size: 1.8em;
             }
 
             .cover-slide h1 {
@@ -294,11 +294,11 @@
 
             th, td {
                 padding: 10px 12px;
-                font-size: 0.85em;
+                font-size: 0.8em;
             }
 
             th {
-                font-size: 0.9em;
+                font-size: 0.85em;
             }
         }
     </style>
@@ -318,8 +318,10 @@
         <div class="slide">
             <div class="slide-content">
                 <div class="title-section">
-                    <h1>Vanilla Butter Cake</h1>
-                    <p>All prices estimated in SGD</p>
+                    <h1><span class="emoji">🍰</span>Vanilla Butter Cake</h1>
+                </div>
+                <div class="base-info">
+                    <strong>Base Ingredient:</strong> All-purpose flour = 200 g → 100%
                 </div>
                 <table>
                     <thead>
@@ -327,55 +329,53 @@
                             <th>Ingredient</th>
                             <th>Weight (g)</th>
                             <th>Baker's %</th>
-                            <th>Price (SGD)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Flour</td>
+                            <td>All-purpose flour</td>
                             <td>200</td>
                             <td>100%</td>
-                            <td>0.40</td>
+                        </tr>
+                        <tr>
+                            <td>Baking powder</td>
+                            <td>5</td>
+                            <td>2.5%</td>
+                        </tr>
+                        <tr>
+                            <td>Salt</td>
+                            <td>2</td>
+                            <td>1%</td>
                         </tr>
                         <tr>
                             <td>Butter</td>
                             <td>180</td>
                             <td>90%</td>
-                            <td>3.60</td>
-                        </tr>
-                        <tr>
-                            <td>Sugar</td>
-                            <td>180</td>
-                            <td>90%</td>
-                            <td>0.45</td>
-                        </tr>
-                        <tr>
-                            <td>Eggs</td>
-                            <td>150</td>
-                            <td>75%</td>
-                            <td>1.20</td>
                         </tr>
                         <tr>
                             <td>Milk</td>
                             <td>120</td>
                             <td>60%</td>
-                            <td>0.30</td>
+                        </tr>
+                        <tr>
+                            <td>Sugar</td>
+                            <td>180</td>
+                            <td>90%</td>
+                        </tr>
+                        <tr>
+                            <td>Eggs</td>
+                            <td>150</td>
+                            <td>75%</td>
                         </tr>
                         <tr>
                             <td>Cream</td>
                             <td>60</td>
                             <td>30%</td>
-                            <td>1.00</td>
                         </tr>
                         <tr>
-                            <td>Others</td>
-                            <td>–</td>
-                            <td>–</td>
-                            <td>0.86</td>
-                        </tr>
-                        <tr class="total-row">
-                            <td colspan="3">Total Cost</td>
-                            <td>7.81</td>
+                            <td>Vanilla extract</td>
+                            <td>5</td>
+                            <td>2.5%</td>
                         </tr>
                     </tbody>
                 </table>
@@ -386,8 +386,10 @@
         <div class="slide">
             <div class="slide-content">
                 <div class="title-section">
-                    <h1>Black Forest Cake</h1>
-                    <p>All prices estimated in SGD</p>
+                    <h1><span class="emoji">🍫</span>Black Forest Cake</h1>
+                </div>
+                <div class="base-info">
+                    <strong>Base Ingredient:</strong> Flour = 100 g → 100%
                 </div>
                 <table>
                     <thead>
@@ -395,7 +397,6 @@
                             <th>Ingredient</th>
                             <th>Weight (g)</th>
                             <th>Baker's %</th>
-                            <th>Price (SGD)</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -403,44 +404,52 @@
                             <td>Flour</td>
                             <td>100</td>
                             <td>100%</td>
-                            <td>0.20</td>
+                        </tr>
+                        <tr>
+                            <td>Baking powder</td>
+                            <td>5</td>
+                            <td>5%</td>
+                        </tr>
+                        <tr>
+                            <td>Butter</td>
+                            <td>40</td>
+                            <td>40%</td>
                         </tr>
                         <tr>
                             <td>Eggs</td>
                             <td>250</td>
                             <td>250%</td>
-                            <td>2.00</td>
                         </tr>
                         <tr>
                             <td>Sugar</td>
                             <td>170</td>
                             <td>170%</td>
-                            <td>0.40</td>
                         </tr>
                         <tr>
-                            <td>Cream</td>
-                            <td>500</td>
-                            <td>500%</td>
-                            <td>6.00</td>
-                        </tr>
-                        <tr>
-                            <td>Chocolate & Cocoa</td>
-                            <td>–</td>
-                            <td>–</td>
-                            <td>3.70</td>
+                            <td>Cocoa powder</td>
+                            <td>40</td>
+                            <td>40%</td>
                         </tr>
                         <tr>
                             <td>Cherries</td>
                             <td>300</td>
                             <td>300%</td>
-                            <td>3.00</td>
                         </tr>
-                        <tr class="total-row">
-                            <td colspan="3">Total Cost</td>
-                            <td>16.15</td>
+                        <tr>
+                            <td>Whipping cream</td>
+                            <td>500</td>
+                            <td>500%</td>
+                        </tr>
+                        <tr>
+                            <td>Chocolate</td>
+                            <td>100</td>
+                            <td>100%</td>
                         </tr>
                     </tbody>
                 </table>
+                <div class="note">
+                    ⚠️ Black Forest Cake has high Baker's % due to the large amount of cream & filling. This is normal.
+                </div>
             </div>
         </div>
 
@@ -448,8 +457,10 @@
         <div class="slide">
             <div class="slide-content">
                 <div class="title-section">
-                    <h1>Red Velvet Cake</h1>
-                    <p>All prices estimated in SGD</p>
+                    <h1><span class="emoji">❤️</span>Red Velvet Cake</h1>
+                </div>
+                <div class="base-info">
+                    <strong>Base Ingredient:</strong> Cake flour = 280 g → 100%
                 </div>
                 <table>
                     <thead>
@@ -457,49 +468,48 @@
                             <th>Ingredient</th>
                             <th>Weight (g)</th>
                             <th>Baker's %</th>
-                            <th>Price (SGD)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Flour</td>
+                            <td>Cake flour</td>
                             <td>280</td>
                             <td>100%</td>
-                            <td>0.60</td>
                         </tr>
                         <tr>
-                            <td>Butter</td>
-                            <td>120</td>
-                            <td>42.9%</td>
-                            <td>2.40</td>
+                            <td>Cocoa powder</td>
+                            <td>15</td>
+                            <td>5.4%</td>
                         </tr>
                         <tr>
                             <td>Sugar</td>
                             <td>180</td>
                             <td>64.3%</td>
-                            <td>0.45</td>
+                        </tr>
+                        <tr>
+                            <td>Butter</td>
+                            <td>120</td>
+                            <td>42.9%</td>
                         </tr>
                         <tr>
                             <td>Eggs</td>
                             <td>150</td>
                             <td>53.6%</td>
-                            <td>1.20</td>
                         </tr>
                         <tr>
-                            <td>Cream Cheese</td>
+                            <td>Buttermilk</td>
+                            <td>180</td>
+                            <td>64.3%</td>
+                        </tr>
+                        <tr>
+                            <td>Red colouring</td>
+                            <td>5</td>
+                            <td>1.8%</td>
+                        </tr>
+                        <tr>
+                            <td>Cream cheese</td>
                             <td>200</td>
                             <td>71.4%</td>
-                            <td>4.00</td>
-                        </tr>
-                        <tr>
-                            <td>Others</td>
-                            <td>–</td>
-                            <td>–</td>
-                            <td>1.60</td>
-                        </tr>
-                        <tr class="total-row">
-                            <td colspan="3">Total Cost</td>
-                            <td>10.25</td>
                         </tr>
                     </tbody>
                 </table>
@@ -510,8 +520,10 @@
         <div class="slide">
             <div class="slide-content">
                 <div class="title-section">
-                    <h1>Cheesecake</h1>
-                    <p>All prices estimated in SGD</p>
+                    <h1><span class="emoji">🧀</span>Cheesecake</h1>
+                </div>
+                <div class="note">
+                    ⚠️ Cheesecake has no flour, so the base ingredient is 👉 <strong>Cream cheese = 250 g → 100%</strong>
                 </div>
                 <table>
                     <thead>
@@ -519,43 +531,43 @@
                             <th>Ingredient</th>
                             <th>Weight (g)</th>
                             <th>Baker's %</th>
-                            <th>Price (SGD)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Cream Cheese</td>
+                            <td>Cream cheese</td>
                             <td>250</td>
                             <td>100%</td>
-                            <td>5.00</td>
                         </tr>
                         <tr>
-                            <td>Butter</td>
-                            <td>180</td>
-                            <td>72%</td>
-                            <td>3.60</td>
+                            <td>Sugar</td>
+                            <td>120</td>
+                            <td>48%</td>
                         </tr>
                         <tr>
                             <td>Eggs</td>
                             <td>150</td>
                             <td>60%</td>
-                            <td>1.20</td>
                         </tr>
                         <tr>
-                            <td>Cream</td>
+                            <td>Butter</td>
+                            <td>180</td>
+                            <td>72%</td>
+                        </tr>
+                        <tr>
+                            <td>Fresh cream</td>
                             <td>100</td>
                             <td>40%</td>
-                            <td>1.50</td>
                         </tr>
                         <tr>
-                            <td>Others</td>
-                            <td>–</td>
-                            <td>–</td>
-                            <td>1.30</td>
+                            <td>Vanilla extract</td>
+                            <td>5</td>
+                            <td>2%</td>
                         </tr>
-                        <tr class="total-row">
-                            <td colspan="3">Total Cost</td>
-                            <td>12.60</td>
+                        <tr>
+                            <td>Lemon juice</td>
+                            <td>20</td>
+                            <td>8%</td>
                         </tr>
                     </tbody>
                 </table>
@@ -566,8 +578,10 @@
         <div class="slide">
             <div class="slide-content">
                 <div class="title-section">
-                    <h1>Strawberry Cake</h1>
-                    <p>All prices estimated in SGD</p>
+                    <h1><span class="emoji">🍓</span>Strawberry Cake</h1>
+                </div>
+                <div class="base-info">
+                    <strong>Base Ingredient:</strong> Cake flour = 150 g → 100%
                 </div>
                 <table>
                     <thead>
@@ -575,49 +589,48 @@
                             <th>Ingredient</th>
                             <th>Weight (g)</th>
                             <th>Baker's %</th>
-                            <th>Price (SGD)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Flour</td>
+                            <td>Cake flour</td>
                             <td>150</td>
                             <td>100%</td>
-                            <td>0.35</td>
                         </tr>
                         <tr>
-                            <td>Butter</td>
+                            <td>Unsalted butter</td>
                             <td>180</td>
                             <td>120%</td>
-                            <td>3.60</td>
                         </tr>
                         <tr>
                             <td>Sugar</td>
                             <td>120</td>
                             <td>80%</td>
-                            <td>0.30</td>
                         </tr>
                         <tr>
                             <td>Eggs</td>
                             <td>100</td>
                             <td>66.7%</td>
-                            <td>0.80</td>
                         </tr>
                         <tr>
                             <td>Milk</td>
                             <td>60</td>
                             <td>40%</td>
-                            <td>0.15</td>
                         </tr>
                         <tr>
-                            <td>Others</td>
-                            <td>–</td>
-                            <td>–</td>
-                            <td>0.86</td>
+                            <td>Baking powder</td>
+                            <td>5</td>
+                            <td>3.3%</td>
                         </tr>
-                        <tr class="total-row">
-                            <td colspan="3">Total Cost</td>
-                            <td>6.06</td>
+                        <tr>
+                            <td>Vanilla extract</td>
+                            <td>5</td>
+                            <td>3.3%</td>
+                        </tr>
+                        <tr>
+                            <td>Salt</td>
+                            <td>2</td>
+                            <td>1.3%</td>
                         </tr>
                     </tbody>
                 </table>
