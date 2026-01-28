@@ -69,7 +69,7 @@
             position: relative;
             z-index: 10;
             width: 100%;
-            max-width: 1000px;
+            max-width: 1100px;
         }
 
         .slide {
@@ -91,18 +91,20 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
-            padding: 50px;
+            padding: 40px;
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            max-height: 85vh;
+            overflow-y: auto;
         }
 
         .title-section {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .title-section h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5em;
+            font-size: 2.2em;
             font-weight: 700;
             margin-bottom: 10px;
             letter-spacing: -1px;
@@ -116,7 +118,7 @@
         }
 
         .title-section p {
-            font-size: 0.95em;
+            font-size: 0.9em;
             font-weight: 300;
             color: #c0c0e8;
             letter-spacing: 1px;
@@ -125,21 +127,105 @@
         .base-info {
             background: rgba(100, 150, 255, 0.1);
             border-left: 3px solid rgba(100, 150, 255, 0.5);
-            padding: 12px 16px;
-            margin-bottom: 20px;
+            padding: 10px 14px;
+            margin-bottom: 15px;
             border-radius: 6px;
-            font-size: 0.9em;
+            font-size: 0.85em;
             color: #d0d0e8;
         }
 
         .note {
             background: rgba(255, 100, 150, 0.1);
             border-left: 3px solid rgba(255, 100, 150, 0.5);
-            padding: 12px 16px;
-            margin-bottom: 20px;
+            padding: 10px 14px;
+            margin-bottom: 15px;
             border-radius: 6px;
-            font-size: 0.85em;
+            font-size: 0.8em;
             color: #d0d0e8;
+        }
+
+        .price-summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .price-item {
+            background: rgba(100, 150, 255, 0.08);
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .price-label {
+            font-size: 0.75em;
+            color: #9090b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .price-value {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .price-item.profit {
+            background: rgba(76, 175, 80, 0.15);
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
+
+        .price-item.profit .price-value {
+            color: #4caf50;
+        }
+
+        .price-item.cost {
+            background: rgba(244, 67, 54, 0.1);
+            border: 1px solid rgba(244, 67, 54, 0.2);
+        }
+
+        .price-item.cost .price-value {
+            color: #ff9999;
+        }
+
+        .price-item.selling {
+            background: rgba(33, 150, 243, 0.15);
+            border: 1px solid rgba(33, 150, 243, 0.3);
+        }
+
+        .price-item.selling .price-value {
+            color: #64b5f6;
+        }
+
+        .price-item.slice-selling {
+            background: rgba(156, 39, 176, 0.15);
+            border: 1px solid rgba(156, 39, 176, 0.3);
+        }
+
+        .price-item.slice-selling .price-value {
+            color: #ce93d8;
+        }
+
+        .price-item.slice-profit {
+            background: rgba(255, 193, 7, 0.15);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+        }
+
+        .price-item.slice-profit .price-value {
+            color: #ffd54f;
         }
 
         .cover-slide {
@@ -182,6 +268,8 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             overflow: hidden;
+            margin-bottom: 15px;
+            font-size: 0.9em;
         }
 
         thead {
@@ -190,17 +278,18 @@
         }
 
         th {
-            padding: 14px 16px;
+            padding: 12px 12px;
             text-align: left;
             font-family: 'Playfair Display', serif;
-            font-size: 0.95em;
+            font-size: 0.9em;
             font-weight: 600;
             color: #ffffff;
             letter-spacing: 0.5px;
         }
 
         th:nth-child(2),
-        th:nth-child(3) {
+        th:nth-child(3),
+        th:nth-child(4) {
             text-align: center;
         }
 
@@ -218,20 +307,36 @@
         }
 
         td {
-            padding: 12px 16px;
+            padding: 10px 12px;
             font-family: 'Lato', sans-serif;
             font-size: 0.85em;
             color: #d0d0e8;
         }
 
         td:nth-child(2),
-        td:nth-child(3) {
+        td:nth-child(3),
+        td:nth-child(4) {
             text-align: center;
         }
 
         td:first-child {
             font-weight: 500;
             color: #f0f0ff;
+        }
+
+        .total-row {
+            background: rgba(100, 150, 255, 0.15);
+            font-weight: 600;
+            border-top: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .total-row td {
+            padding: 12px;
+            color: #ffffff;
+        }
+
+        .total-row td:first-child {
+            font-size: 0.95em;
         }
 
         .controls {
@@ -281,24 +386,29 @@
 
         @media (max-width: 768px) {
             .slide-content {
-                padding: 30px;
+                padding: 20px;
             }
 
             .title-section h1 {
-                font-size: 1.8em;
+                font-size: 1.6em;
             }
 
             .cover-slide h1 {
                 font-size: 2.2em;
             }
 
-            th, td {
-                padding: 10px 12px;
+            table {
                 font-size: 0.8em;
             }
 
-            th {
-                font-size: 0.85em;
+            th, td {
+                padding: 8px 10px;
+                font-size: 0.75em;
+            }
+
+            .price-summary,
+            .price-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -310,7 +420,7 @@
             <div class="slide-content cover-slide">
                 <h1>Cake Costing &<br>Baker's Percentage</h1>
                 <p>Professional Pricing Analysis</p>
-                <p class="subtitle">All prices estimated in SGD</p>
+                <p class="subtitle">Cost vs Selling Price Breakdown (SGD)</p>
             </div>
         </div>
 
@@ -329,6 +439,7 @@
                             <th>Ingredient</th>
                             <th>Weight (g)</th>
                             <th>Baker's %</th>
+                            <th>Price (SGD)</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -336,49 +447,89 @@
                             <td>All-purpose flour</td>
                             <td>200</td>
                             <td>100%</td>
+                            <td>$0.40</td>
                         </tr>
                         <tr>
                             <td>Baking powder</td>
                             <td>5</td>
                             <td>2.5%</td>
+                            <td>$0.08</td>
                         </tr>
                         <tr>
                             <td>Salt</td>
                             <td>2</td>
                             <td>1%</td>
+                            <td>$0.02</td>
                         </tr>
                         <tr>
                             <td>Butter</td>
                             <td>180</td>
                             <td>90%</td>
+                            <td>$3.60</td>
                         </tr>
                         <tr>
                             <td>Milk</td>
                             <td>120</td>
                             <td>60%</td>
+                            <td>$0.36</td>
                         </tr>
                         <tr>
                             <td>Sugar</td>
                             <td>180</td>
                             <td>90%</td>
+                            <td>$0.36</td>
                         </tr>
                         <tr>
-                            <td>Eggs</td>
+                            <td>Eggs (2 pcs)</td>
                             <td>150</td>
                             <td>75%</td>
+                            <td>$0.90</td>
                         </tr>
                         <tr>
                             <td>Cream</td>
                             <td>60</td>
                             <td>30%</td>
+                            <td>$0.72</td>
                         </tr>
                         <tr>
                             <td>Vanilla extract</td>
                             <td>5</td>
                             <td>2.5%</td>
+                            <td>$0.30</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td>Total Material Cost</td>
+                            <td colspan="2"></td>
+                            <td><strong>$6.74</strong></td>
                         </tr>
                     </tbody>
                 </table>
+                <div class="price-grid">
+                    <div class="price-item cost">
+                        <div class="price-label">Whole Cake Cost</div>
+                        <div class="price-value">$6.74</div>
+                    </div>
+                    <div class="price-item selling">
+                        <div class="price-label">Whole Cake Price</div>
+                        <div class="price-value">$38</div>
+                    </div>
+                    <div class="price-item cost">
+                        <div class="price-label">Per Slice Cost (8 slices)</div>
+                        <div class="price-value">$0.84</div>
+                    </div>
+                    <div class="price-item slice-selling">
+                        <div class="price-label">Per Slice Price</div>
+                        <div class="price-value">$6.50</div>
+                    </div>
+                    <div class="price-item profit">
+                        <div class="price-label">Profit (Whole)</div>
+                        <div class="price-value">$31.26</div>
+                    </div>
+                    <div class="price-item slice-profit">
+                        <div class="price-label">Profit per Slice</div>
+                        <div class="price-value">$5.66</div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -397,6 +548,7 @@
                             <th>Ingredient</th>
                             <th>Weight (g)</th>
                             <th>Baker's %</th>
+                            <th>Price (SGD)</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -404,51 +556,91 @@
                             <td>Flour</td>
                             <td>100</td>
                             <td>100%</td>
+                            <td>$0.20</td>
                         </tr>
                         <tr>
                             <td>Baking powder</td>
                             <td>5</td>
                             <td>5%</td>
+                            <td>$0.08</td>
                         </tr>
                         <tr>
                             <td>Butter</td>
                             <td>40</td>
                             <td>40%</td>
+                            <td>$0.80</td>
                         </tr>
                         <tr>
-                            <td>Eggs</td>
+                            <td>Eggs (5 pcs)</td>
                             <td>250</td>
                             <td>250%</td>
+                            <td>$2.50</td>
                         </tr>
                         <tr>
                             <td>Sugar</td>
                             <td>170</td>
                             <td>170%</td>
+                            <td>$0.34</td>
                         </tr>
                         <tr>
                             <td>Cocoa powder</td>
                             <td>40</td>
                             <td>40%</td>
+                            <td>$3.20</td>
                         </tr>
                         <tr>
-                            <td>Cherries</td>
+                            <td>Cherries (fresh)</td>
                             <td>300</td>
                             <td>300%</td>
+                            <td>$3.90</td>
                         </tr>
                         <tr>
                             <td>Whipping cream</td>
                             <td>500</td>
                             <td>500%</td>
+                            <td>$5.50</td>
                         </tr>
                         <tr>
-                            <td>Chocolate</td>
+                            <td>Chocolate (dark)</td>
                             <td>100</td>
                             <td>100%</td>
+                            <td>$2.50</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td>Total Material Cost</td>
+                            <td colspan="2"></td>
+                            <td><strong>$19.02</strong></td>
                         </tr>
                     </tbody>
                 </table>
                 <div class="note">
                     ⚠️ Black Forest Cake has high Baker's % due to the large amount of cream & filling. This is normal.
+                </div>
+                <div class="price-grid">
+                    <div class="price-item cost">
+                        <div class="price-label">Whole Cake Cost</div>
+                        <div class="price-value">$19.02</div>
+                    </div>
+                    <div class="price-item selling">
+                        <div class="price-label">Whole Cake Price</div>
+                        <div class="price-value">$45</div>
+                    </div>
+                    <div class="price-item cost">
+                        <div class="price-label">Per Slice Cost (8 slices)</div>
+                        <div class="price-value">$2.38</div>
+                    </div>
+                    <div class="price-item slice-selling">
+                        <div class="price-label">Per Slice Price</div>
+                        <div class="price-value">$7.50</div>
+                    </div>
+                    <div class="price-item profit">
+                        <div class="price-label">Profit (Whole)</div>
+                        <div class="price-value">$25.98</div>
+                    </div>
+                    <div class="price-item slice-profit">
+                        <div class="price-label">Profit per Slice</div>
+                        <div class="price-value">$5.12</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -460,7 +652,7 @@
                     <h1><span class="emoji">❤️</span>Red Velvet Cake</h1>
                 </div>
                 <div class="base-info">
-                    <strong>Base Ingredient:</strong> Cake flour = 280 g → 100%
+                    <strong>Base Ingredient:</strong> Flour = 280 g → 100%
                 </div>
                 <table>
                     <thead>
@@ -468,51 +660,91 @@
                             <th>Ingredient</th>
                             <th>Weight (g)</th>
                             <th>Baker's %</th>
+                            <th>Price (SGD)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Cake flour</td>
+                            <td>Flour</td>
                             <td>280</td>
                             <td>100%</td>
+                            <td>$0.56</td>
                         </tr>
                         <tr>
                             <td>Cocoa powder</td>
                             <td>15</td>
                             <td>5.4%</td>
+                            <td>$1.20</td>
                         </tr>
                         <tr>
                             <td>Sugar</td>
                             <td>180</td>
                             <td>64.3%</td>
+                            <td>$0.36</td>
                         </tr>
                         <tr>
                             <td>Butter</td>
                             <td>120</td>
                             <td>42.9%</td>
+                            <td>$2.40</td>
                         </tr>
                         <tr>
-                            <td>Eggs</td>
+                            <td>Eggs (3 pcs)</td>
                             <td>150</td>
                             <td>53.6%</td>
+                            <td>$1.50</td>
                         </tr>
                         <tr>
                             <td>Buttermilk</td>
                             <td>180</td>
                             <td>64.3%</td>
+                            <td>$0.45</td>
                         </tr>
                         <tr>
                             <td>Red colouring</td>
                             <td>5</td>
                             <td>1.8%</td>
+                            <td>$0.50</td>
                         </tr>
                         <tr>
                             <td>Cream cheese</td>
                             <td>200</td>
                             <td>71.4%</td>
+                            <td>$4.00</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td>Total Material Cost</td>
+                            <td colspan="2"></td>
+                            <td><strong>$10.97</strong></td>
                         </tr>
                     </tbody>
                 </table>
+                <div class="price-grid">
+                    <div class="price-item cost">
+                        <div class="price-label">Whole Cake Cost</div>
+                        <div class="price-value">$11.11</div>
+                    </div>
+                    <div class="price-item selling">
+                        <div class="price-label">Whole Cake Price</div>
+                        <div class="price-value">$45</div>
+                    </div>
+                    <div class="price-item cost">
+                        <div class="price-label">Per Slice Cost (8 slices)</div>
+                        <div class="price-value">$1.39</div>
+                    </div>
+                    <div class="price-item slice-selling">
+                        <div class="price-label">Per Slice Price</div>
+                        <div class="price-value">$7.00</div>
+                    </div>
+                    <div class="price-item profit">
+                        <div class="price-label">Profit (Whole)</div>
+                        <div class="price-value">$33.89</div>
+                    </div>
+                    <div class="price-item slice-profit">
+                        <div class="price-label">Profit per Slice</div>
+                        <div class="price-value">$5.61</div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -531,6 +763,7 @@
                             <th>Ingredient</th>
                             <th>Weight (g)</th>
                             <th>Baker's %</th>
+                            <th>Price (SGD)</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -538,39 +771,77 @@
                             <td>Cream cheese</td>
                             <td>250</td>
                             <td>100%</td>
+                            <td>$5.00</td>
                         </tr>
                         <tr>
                             <td>Sugar</td>
                             <td>120</td>
                             <td>48%</td>
+                            <td>$0.24</td>
                         </tr>
                         <tr>
-                            <td>Eggs</td>
+                            <td>Eggs (3 pcs)</td>
                             <td>150</td>
                             <td>60%</td>
+                            <td>$1.50</td>
                         </tr>
                         <tr>
                             <td>Butter</td>
                             <td>180</td>
                             <td>72%</td>
+                            <td>$3.60</td>
                         </tr>
                         <tr>
                             <td>Fresh cream</td>
                             <td>100</td>
                             <td>40%</td>
+                            <td>$1.20</td>
                         </tr>
                         <tr>
                             <td>Vanilla extract</td>
                             <td>5</td>
                             <td>2%</td>
+                            <td>$0.30</td>
                         </tr>
                         <tr>
                             <td>Lemon juice</td>
                             <td>20</td>
                             <td>8%</td>
+                            <td>$0.20</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td>Total Material Cost</td>
+                            <td colspan="2"></td>
+                            <td><strong>$12.04</strong></td>
                         </tr>
                     </tbody>
                 </table>
+                <div class="price-grid">
+                    <div class="price-item cost">
+                        <div class="price-label">Whole Cake Cost</div>
+                        <div class="price-value">$12.04</div>
+                    </div>
+                    <div class="price-item selling">
+                        <div class="price-label">Whole Cake Price</div>
+                        <div class="price-value">$48</div>
+                    </div>
+                    <div class="price-item cost">
+                        <div class="price-label">Per Slice Cost (8 slices)</div>
+                        <div class="price-value">$1.51</div>
+                    </div>
+                    <div class="price-item slice-selling">
+                        <div class="price-label">Per Slice Price</div>
+                        <div class="price-value">$7.50</div>
+                    </div>
+                    <div class="price-item profit">
+                        <div class="price-label">Profit (Whole)</div>
+                        <div class="price-value">$35.96</div>
+                    </div>
+                    <div class="price-item slice-profit">
+                        <div class="price-label">Profit per Slice</div>
+                        <div class="price-value">$5.99</div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -581,7 +852,7 @@
                     <h1><span class="emoji">🍓</span>Strawberry Cake</h1>
                 </div>
                 <div class="base-info">
-                    <strong>Base Ingredient:</strong> Cake flour = 150 g → 100%
+                    <strong>Base Ingredient:</strong> Flour = 150 g → 100%
                 </div>
                 <table>
                     <thead>
@@ -589,58 +860,531 @@
                             <th>Ingredient</th>
                             <th>Weight (g)</th>
                             <th>Baker's %</th>
+                            <th>Price (SGD)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Cake flour</td>
+                            <td>Flour</td>
                             <td>150</td>
                             <td>100%</td>
+                            <td>$0.30</td>
                         </tr>
                         <tr>
                             <td>Unsalted butter</td>
                             <td>180</td>
                             <td>120%</td>
+                            <td>$3.60</td>
                         </tr>
                         <tr>
                             <td>Sugar</td>
                             <td>120</td>
                             <td>80%</td>
+                            <td>$0.24</td>
                         </tr>
                         <tr>
-                            <td>Eggs</td>
+                            <td>Eggs (2 pcs)</td>
                             <td>100</td>
                             <td>66.7%</td>
+                            <td>$0.90</td>
                         </tr>
                         <tr>
                             <td>Milk</td>
                             <td>60</td>
                             <td>40%</td>
+                            <td>$0.18</td>
                         </tr>
                         <tr>
                             <td>Baking powder</td>
                             <td>5</td>
                             <td>3.3%</td>
+                            <td>$0.08</td>
                         </tr>
                         <tr>
                             <td>Vanilla extract</td>
                             <td>5</td>
                             <td>3.3%</td>
+                            <td>$0.30</td>
                         </tr>
                         <tr>
                             <td>Salt</td>
                             <td>2</td>
                             <td>1.3%</td>
+                            <td>$0.02</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td>Total Material Cost</td>
+                            <td colspan="2"></td>
+                            <td><strong>$5.62</strong></td>
                         </tr>
                     </tbody>
                 </table>
+                <div class="price-grid">
+                    <div class="price-item cost">
+                        <div class="price-label">Whole Cake Cost</div>
+                        <div class="price-value">$5.70</div>
+                    </div>
+                    <div class="price-item selling">
+                        <div class="price-label">Whole Cake Price</div>
+                        <div class="price-value">$46</div>
+                    </div>
+                    <div class="price-item cost">
+                        <div class="price-label">Per Slice Cost (8 slices)</div>
+                        <div class="price-value">$0.71</div>
+                    </div>
+                    <div class="price-item slice-selling">
+                        <div class="price-label">Per Slice Price</div>
+                        <div class="price-value">$6.50</div>
+                    </div>
+                    <div class="price-item profit">
+                        <div class="price-label">Profit (Whole)</div>
+                        <div class="price-value">$40.30</div>
+                    </div>
+                    <div class="price-item slice-profit">
+                        <div class="price-label">Profit per Slice</div>
+                        <div class="price-value">$5.79</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Matcha Cake -->
+        <div class="slide">
+            <div class="slide-content">
+                <div class="title-section">
+                    <h1><span class="emoji">🍵</span>Matcha Cake</h1>
+                </div>
+                <div class="base-info">
+                    <strong>Base Ingredient:</strong> Flour = 180 g → 100%
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ingredient</th>
+                            <th>Weight (g)</th>
+                            <th>Baker's %</th>
+                            <th>Price (SGD)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Flour</td>
+                            <td>180</td>
+                            <td>100%</td>
+                            <td>$0.36</td>
+                        </tr>
+                        <tr>
+                            <td>Matcha powder</td>
+                            <td>20</td>
+                            <td>11.1%</td>
+                            <td>$4.50</td>
+                        </tr>
+                        <tr>
+                            <td>Baking powder</td>
+                            <td>5</td>
+                            <td>2.8%</td>
+                            <td>$0.08</td>
+                        </tr>
+                        <tr>
+                            <td>Salt</td>
+                            <td>2</td>
+                            <td>1.1%</td>
+                            <td>$0.02</td>
+                        </tr>
+                        <tr>
+                            <td>Butter</td>
+                            <td>140</td>
+                            <td>77.8%</td>
+                            <td>$2.80</td>
+                        </tr>
+                        <tr>
+                            <td>Sugar</td>
+                            <td>160</td>
+                            <td>88.9%</td>
+                            <td>$0.32</td>
+                        </tr>
+                        <tr>
+                            <td>Eggs (2 pcs)</td>
+                            <td>120</td>
+                            <td>66.7%</td>
+                            <td>$0.72</td>
+                        </tr>
+                        <tr>
+                            <td>Milk</td>
+                            <td>100</td>
+                            <td>55.6%</td>
+                            <td>$0.30</td>
+                        </tr>
+                        <tr>
+                            <td>White chocolate</td>
+                            <td>50</td>
+                            <td>27.8%</td>
+                            <td>$1.25</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td>Total Material Cost</td>
+                            <td colspan="2"></td>
+                            <td><strong>$10.35</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="price-grid">
+                    <div class="price-item cost">
+                        <div class="price-label">Whole Cake Cost</div>
+                        <div class="price-value">$10.44</div>
+                    </div>
+                    <div class="price-item selling">
+                        <div class="price-label">Whole Cake Price</div>
+                        <div class="price-value">$50</div>
+                    </div>
+                    <div class="price-item cost">
+                        <div class="price-label">Per Slice Cost (8 slices)</div>
+                        <div class="price-value">$1.31</div>
+                    </div>
+                    <div class="price-item slice-selling">
+                        <div class="price-label">Per Slice Price</div>
+                        <div class="price-value">$8.00</div>
+                    </div>
+                    <div class="price-item profit">
+                        <div class="price-label">Profit (Whole)</div>
+                        <div class="price-value">$39.56</div>
+                    </div>
+                    <div class="price-item slice-profit">
+                        <div class="price-label">Profit per Slice</div>
+                        <div class="price-value">$6.69</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Brownies Cake -->
+        <div class="slide">
+            <div class="slide-content">
+                <div class="title-section">
+                    <h1><span class="emoji">🍫</span>Brownies Cake</h1>
+                </div>
+                <div class="base-info">
+                    <strong>Base Ingredient:</strong> Chocolate = 150 g → 100%
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ingredient</th>
+                            <th>Weight (g)</th>
+                            <th>Baker's %</th>
+                            <th>Price (SGD)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Chocolate (dark)</td>
+                            <td>150</td>
+                            <td>100%</td>
+                            <td>$3.75</td>
+                        </tr>
+                        <tr>
+                            <td>Butter</td>
+                            <td>120</td>
+                            <td>80%</td>
+                            <td>$2.40</td>
+                        </tr>
+                        <tr>
+                            <td>Eggs (3 pcs)</td>
+                            <td>150</td>
+                            <td>100%</td>
+                            <td>$1.50</td>
+                        </tr>
+                        <tr>
+                            <td>Sugar</td>
+                            <td>140</td>
+                            <td>93.3%</td>
+                            <td>$0.28</td>
+                        </tr>
+                        <tr>
+                            <td>Cocoa powder</td>
+                            <td>30</td>
+                            <td>20%</td>
+                            <td>$2.40</td>
+                        </tr>
+                        <tr>
+                            <td>Flour</td>
+                            <td>80</td>
+                            <td>53.3%</td>
+                            <td>$0.16</td>
+                        </tr>
+                        <tr>
+                            <td>Baking powder</td>
+                            <td>3</td>
+                            <td>2%</td>
+                            <td>$0.05</td>
+                        </tr>
+                        <tr>
+                            <td>Salt</td>
+                            <td>2</td>
+                            <td>1.3%</td>
+                            <td>$0.02</td>
+                        </tr>
+                        <tr>
+                            <td>Vanilla extract</td>
+                            <td>5</td>
+                            <td>3.3%</td>
+                            <td>$0.30</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td>Total Material Cost</td>
+                            <td colspan="2"></td>
+                            <td><strong>$10.86</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="price-grid">
+                    <div class="price-item cost">
+                        <div class="price-label">Whole Cake Cost</div>
+                        <div class="price-value">$10.86</div>
+                    </div>
+                    <div class="price-item selling">
+                        <div class="price-label">Whole Cake Price</div>
+                        <div class="price-value">$42</div>
+                    </div>
+                    <div class="price-item cost">
+                        <div class="price-label">Per Slice Cost (9 slices)</div>
+                        <div class="price-value">$1.21</div>
+                    </div>
+                    <div class="price-item slice-selling">
+                        <div class="price-label">Per Slice Price</div>
+                        <div class="price-value">$6.00</div>
+                    </div>
+                    <div class="price-item profit">
+                        <div class="price-label">Profit (Whole)</div>
+                        <div class="price-value">$31.14</div>
+                    </div>
+                    <div class="price-item slice-profit">
+                        <div class="price-label">Profit per Slice</div>
+                        <div class="price-value">$4.79</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carrot Cake -->
+        <div class="slide">
+            <div class="slide-content">
+                <div class="title-section">
+                    <h1><span class="emoji">🥕</span>Carrot Cake</h1>
+                </div>
+                <div class="base-info">
+                    <strong>Base Ingredient:</strong> Flour = 200 g → 100%
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ingredient</th>
+                            <th>Weight (g)</th>
+                            <th>Baker's %</th>
+                            <th>Price (SGD)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Flour</td>
+                            <td>200</td>
+                            <td>100%</td>
+                            <td>$0.40</td>
+                        </tr>
+                        <tr>
+                            <td>Shredded carrots</td>
+                            <td>250</td>
+                            <td>125%</td>
+                            <td>$2.00</td>
+                        </tr>
+                        <tr>
+                            <td>Baking powder</td>
+                            <td>6</td>
+                            <td>3%</td>
+                            <td>$0.10</td>
+                        </tr>
+                        <tr>
+                            <td>Cinnamon</td>
+                            <td>4</td>
+                            <td>2%</td>
+                            <td>$0.30</td>
+                        </tr>
+                        <tr>
+                            <td>Oil</td>
+                            <td>150</td>
+                            <td>75%</td>
+                            <td>$0.45</td>
+                        </tr>
+                        <tr>
+                            <td>Sugar</td>
+                            <td>200</td>
+                            <td>100%</td>
+                            <td>$0.40</td>
+                        </tr>
+                        <tr>
+                            <td>Eggs (2 pcs)</td>
+                            <td>120</td>
+                            <td>60%</td>
+                            <td>$0.72</td>
+                        </tr>
+                        <tr>
+                            <td>Cream cheese frosting</td>
+                            <td>200</td>
+                            <td>100%</td>
+                            <td>$4.00</td>
+                        </tr>
+                        <tr>
+                            <td>Walnuts (chopped)</td>
+                            <td>100</td>
+                            <td>50%</td>
+                            <td>$1.50</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td>Total Material Cost</td>
+                            <td colspan="2"></td>
+                            <td><strong>$9.87</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="price-grid">
+                    <div class="price-item cost">
+                        <div class="price-label">Whole Cake Cost</div>
+                        <div class="price-value">$9.87</div>
+                    </div>
+                    <div class="price-item selling">
+                        <div class="price-label">Whole Cake Price</div>
+                        <div class="price-value">$44</div>
+                    </div>
+                    <div class="price-item cost">
+                        <div class="price-label">Per Slice Cost (8 slices)</div>
+                        <div class="price-value">$1.23</div>
+                    </div>
+                    <div class="price-item slice-selling">
+                        <div class="price-label">Per Slice Price</div>
+                        <div class="price-value">$6.50</div>
+                    </div>
+                    <div class="price-item profit">
+                        <div class="price-label">Profit (Whole)</div>
+                        <div class="price-value">$34.13</div>
+                    </div>
+                    <div class="price-item slice-profit">
+                        <div class="price-label">Profit per Slice</div>
+                        <div class="price-value">$5.27</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chocolate Lava Cake -->
+        <div class="slide">
+            <div class="slide-content">
+                <div class="title-section">
+                    <h1><span class="emoji">🌋</span>Chocolate Lava Cake</h1>
+                </div>
+                <div class="base-info">
+                    <strong>Base Ingredient:</strong> Flour = 30 g → 100%
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ingredient</th>
+                            <th>Weight (g)</th>
+                            <th>Baker's %</th>
+                            <th>Price (SGD)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Flour</td>
+                            <td>30</td>
+                            <td>100%</td>
+                            <td>$0.06</td>
+                        </tr>
+                        <tr>
+                            <td>Chocolate (dark/semi-sweet)</td>
+                            <td>120</td>
+                            <td>400%</td>
+                            <td>$3.00</td>
+                        </tr>
+                        <tr>
+                            <td>Butter</td>
+                            <td>100</td>
+                            <td>333.3%</td>
+                            <td>$2.00</td>
+                        </tr>
+                        <tr>
+                            <td>Eggs (2 pcs)</td>
+                            <td>100</td>
+                            <td>333.3%</td>
+                            <td>$1.00</td>
+                        </tr>
+                        <tr>
+                            <td>Sugar</td>
+                            <td>60</td>
+                            <td>200%</td>
+                            <td>$0.12</td>
+                        </tr>
+                        <tr>
+                            <td>Cocoa powder</td>
+                            <td>20</td>
+                            <td>66.7%</td>
+                            <td>$1.60</td>
+                        </tr>
+                        <tr>
+                            <td>Salt</td>
+                            <td>1</td>
+                            <td>3.3%</td>
+                            <td>$0.01</td>
+                        </tr>
+                        <tr>
+                            <td>Vanilla extract</td>
+                            <td>2</td>
+                            <td>6.7%</td>
+                            <td>$0.15</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td>Total Material Cost (Per Cake)</td>
+                            <td colspan="2"></td>
+                            <td><strong>$7.94</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="note">
+                    ℹ️ Chocolate Lava Cake is typically served as an individual cake or 2-3 servings per cake. Pricing shown is per individual lava cake.
+                </div>
+                <div class="price-grid">
+                    <div class="price-item cost">
+                        <div class="price-label">Per Cake Cost</div>
+                        <div class="price-value">$7.94</div>
+                    </div>
+                    <div class="price-item selling">
+                        <div class="price-label">Per Cake Price</div>
+                        <div class="price-value">$12</div>
+                    </div>
+                    <div class="price-item cost">
+                        <div class="price-label">Per Serving Cost (2 servings)</div>
+                        <div class="price-value">$3.97</div>
+                    </div>
+                    <div class="price-item slice-selling">
+                        <div class="price-label">Per Serving Price</div>
+                        <div class="price-value">$6.50</div>
+                    </div>
+                    <div class="price-item profit">
+                        <div class="price-label">Profit (Per Cake)</div>
+                        <div class="price-value">$4.06</div>
+                    </div>
+                    <div class="price-item slice-profit">
+                        <div class="price-label">Profit per Serving</div>
+                        <div class="price-value">$2.53</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="controls">
         <button id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
-        <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">6</span></span>
+        <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">10</span></span>
         <button id="nextBtn" onclick="changeSlide(1)">Next →</button>
     </div>
 
